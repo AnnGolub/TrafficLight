@@ -13,7 +13,6 @@ struct ColorCircle: View {
     
     var body: some View {
         Circle()
-            .padding(0.0)
             .frame(width: 150.0, height: 150.0)
             .overlay(Circle().stroke(Color.white, lineWidth: 2))
             .shadow(radius: 10)

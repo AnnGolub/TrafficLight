@@ -12,8 +12,6 @@ enum CurrentLight {
 }
 
 struct ContentView: View {
-    @State private var lightIsOn = 1.0
-    @State private var lightIsOff = 0.3
     @State private var currentLight = CurrentLight.red
     
     @State private var redLight = 0.3
@@ -33,9 +31,7 @@ struct ContentView: View {
                 ColorCircle(color: .green, opacity: greenLight)
                 Spacer()
                 
-                Button(action: {
-                    startButtonPressed()
-                }) {
+                Button(action: startButtonPressed) {
                     Text(buttonText)
                         .font(.title)
                         .frame(width: 240.0, height: 54.0)
@@ -49,6 +45,9 @@ struct ContentView: View {
     }
     
     private func startButtonPressed() {
+        let lightIsOn = 1.0
+        let lightIsOff = 0.3
+        
         if buttonText == "Start" {
             buttonText = "Next"
         }
